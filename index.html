@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
+    integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/style/main.css">
+  <link rel="stylesheet" href="assets/style/style.css">
+  <title>checkpoint3</title>
+</head>
+
+<body>
+  <header class="container-fluid">
+    <section class="row">
+      <nav class=" navbar navbar-dark navbar-expand bg-dark text-light no-select">
+        <a class="navbar-brand ms-3" href="#">
+          <span class="ms-2 mdi mdi-notebook text-success">Notebook</span>
+        </a>
+      </nav>
+    </section>
+  </header>
+
+
+
+  <main class="container-fluid">
+
+    <!-- <form action="">
+      <input type="text" placeholder="Title">
+      <input type="color" placeholder="color">
+    </form> -->
+
+    <!-- NOTE diary img -->
+
+    <section class="row">
+      <div class="d-flex col-7">
+
+        <button class="btn btn-primary mdi mdi-folder" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#myNotesOffCanvas" aria-controls="offcanvasExample">
+          Notes
+        </button>
+
+
+
+
+
+        <form class="d-flex" onsubmit="app.notePagesController.createNewNote()">
+          <button class=" col-2 m-1 rounded mdi mdi-plus "></button>
+          <input class="rounded" type="text" placeholder="New Title" id="title" name="title" minlength="3"
+            maxlength="15" required>
+          <input class="rounded" type="color" name="color" id="color" placeholder="color">
+        </form>
+
+      </div>
+      <div class="col-5 d-flex justify-content-end">
+        <button class="btn-success btn d-flex justify-content-center mdi mdi-floppy" title="save notes"
+          onclick="app.notePagesController.saveNotes()"></button>
+        <!-- <button class="btn-danger btn mdi mdi-delete-circle-outline" title="delete Note"
+          onclick="app.notePagesController.deleteNotes()"></button> -->
+      </div>
+
+    </section>
+    <section id="start-page" class="row">
+      <!-- <div col-12>
+        <section class="row">
+          <div class="col-2 d-flex ">
+
+            <button class=" m-1 rounded mdi mdi-book-open-page-variant-outline"></button>
+            <button class=" m-1 rounded mdi mdi-folder"></button>
+          </div>
+        </section>
+        <section class="row">
+
+          <div class="col-3"></div>
+          <div class="col-md-6 col-12 d-flex justify-content-">
+
+            <img class=" img-fluid rounded"
+              src="https://i.pinimg.com/originals/3d/1d/47/3d1d47ee900972638296b3bc79f4c894.png" alt="">
+          </div>
+          <div class="col-3"></div>
+        </section>
+      </div> -->
+
+    </section>
+
+    <section id="note-form" class="row">
+      <!-- <div class="col-md-3 card bg-warning">
+        <h1 class="p-5">Title</h1>
+        <h5 class="p-2">Created Date</h5>
+        <h5 class="p-2">Updated Date</h5>
+      </div>
+      <div class="col-md-9">
+        <textarea class="col-10 " name="" id="" cols="30" rows="40"></textarea>
+      </div> -->
+
+    </section>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="myNotesOffCanvas" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Your Notes</h5>
+
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body" id="notes-folder">
+        <!-- <div>
+          <p>Draw all my notes in here</p>
+        </div>
+      </div> -->
+      </div>
+    </div>
+
+  </main>
+
+
+
+
+
+
+  <footer class="bg-dark text-light">
+    <div class="text-center no-select">
+      <p><small>Made with 💖 by CodeWorks</small></p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.10/dist/sweetalert2.all.min.js"
+    integrity="sha256-hw7v8jZF/rFEdx1ZHepT4D73AFTHLu/P9kEyrNesRyc=" crossorigin="anonymous"></script>
+  <script src="app/App.js" type="module"></script>
+</body>
+
+</html>
