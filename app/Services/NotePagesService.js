@@ -29,12 +29,14 @@ class NotePagesService {
     //update the updated at
     appState.emit('activeNote')
     saveState('notes', appState.notes)
+    appState.total = appState.total
   }
 
   deleteNotes(notesId) {
 
     let newArr = appState.notes.filter(n => n.id != notesId)
     appState.notes = newArr
+    appState.notes = appState.notes
     console.log('array', appState.notes)
     saveState('notes', appState.notes)
   }

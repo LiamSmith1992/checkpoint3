@@ -12,7 +12,7 @@ class AppState extends EventEmitter {
 
   activeNote = null
 
-  total = this.notes.length + 1
+  total = this.notes.length
 }
 
 export const appState = new Proxy(new AppState(), {

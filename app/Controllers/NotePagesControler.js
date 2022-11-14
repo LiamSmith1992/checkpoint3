@@ -10,6 +10,7 @@ import { setHTML } from "../Utils/Writer.js";
 
 function _drawStartPage() {
   // console.log("Starting Template:", Notes.StartingTemplates/())
+  appState.total = appState.notes.length
   setHTML('start-page', Notes.StartingTemplate())
 }
 
@@ -32,7 +33,11 @@ function _drawActiveNote() {
   setHTML('start-page', activeNote.NoteTemplate)
 }
 
-
+// function _drawTotal() {
+//   let total = appState.total
+//   let notesArr = appState.notes
+//   total += notesArr.length + 1
+// }
 
 
 
@@ -43,10 +48,12 @@ export class NotePagesController {
 
 
   constructor() {
-
+    // appState.on('notes', _drawTotal)
+    // _drawTotal
     _drawNotes()
     _drawStartPage()
     // _drawNotes()
+
     appState.on('activeNote', _drawActiveNote)
     appState.on('activeNote', _drawNotes)
     appState.on('notes', _drawNotes)
@@ -68,6 +75,7 @@ export class NotePagesController {
     let formData = getFormData(form)
     console.log(formData)
     notePagesService.createNewNote(formData)
+
     form.reset()
 
   }
